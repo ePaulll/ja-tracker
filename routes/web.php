@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -12,10 +13,10 @@ Route::get('/user_register', [FrontendController::class, 'user_register'])->name
 
 
 // Route to handle the registration form submission
-Route::post('/user_register', [FrontendController::class, 'storeUserRegistration'])->name('user_register.store');
+Route::post('/user_register', [UserController::class, 'storeUserRegistration'])->name('user_register.store');
 
 // Route to handle the login form submission
-Route::post('/', [FrontendController::class, 'loginUser'])->name('login_user');
+Route::post('/', [UserController::class, 'loginUser'])->name('login_user');
 
 
 // Route::get('/dashboard', function () {

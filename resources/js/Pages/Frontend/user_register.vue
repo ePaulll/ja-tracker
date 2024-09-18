@@ -79,7 +79,7 @@ const confirmPassword = ref('');
 // Function to handle form submission
 const handleSubmit = async () => {
   try {
-    await axios.post(route('user_register.store'), {
+    axios.post(route('user_register.store'), {
         name: name.value,
         email: email.value,
         password: password.value,
